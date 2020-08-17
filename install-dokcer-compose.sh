@@ -11,6 +11,14 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 
 docker-compose -version # 查看docker-compose版本 
+
+mkdir -p /home/edgex/docker-compose
+# sudo curl -L https://github.com/woshixiangao/testsh/blob/master/docker-compose-geneva-redis-no-secty.yml -o /home/edgex/docker-compose
+sudo wget -P /home/edgex/docker-compose https://github.com/woshixiangao/testsh/blob/master/docker-compose-geneva-redis-no-secty.yml
+cd /home/edgex/docker-compose
+mv docker-compose-geneva-redis-no-secty.yml docker-compose.yml
+docker-compose up -d
+docker-compose ps
 # sudo rm /usr/local/bin/docker-compose # 卸载docker-compose
 
 # ====安装docker-compose指令串=====
